@@ -1,0 +1,25 @@
+<div><a href="#/customers">Go to List...</a></div>
+<div><a href="#/service">Go to List...</a></div>
+
+<div class="row">
+    <div class="col-sm-5" ng-controller="CustomerPositionController as cpVM">
+        <div class="jumbotron">
+            <h2>Current Position</h2>
+            <p>{{ cpVM.customerPosition | number }}</p>
+        </div>
+    </div>
+
+    <div class="col-sm-7" ng-controller="CustomerTradesController as ctcVM">
+        <table class="table table-striped table-bordered">
+            <tr>
+                <th>From Account</th>
+                <th>Amount</th>
+            </tr>
+            <tr ng-repeat="trade in ctcVM.trades">
+                <td>{{ trade.fromAcct }}</td>
+                <td>{{ trade.amount | currency }}</td>
+            </tr>
+        </table>
+
+    </div>
+</div>
